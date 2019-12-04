@@ -16,10 +16,10 @@ steps:
   args: 
   - '-c'
   - > 
-    gcloud container clusters get-credentials --region=us-west2,_CLUSTER=west;
+    gcloud container clusters get-credentials west --region=us-west2;
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/qwiklabs-gcp-0279bdf0b5b4993a;
 
 # Add more power, and more time, for heavy Skaffold build
 timeout: '3600s'
 options:
-  machineType: 'N1_HIGHCPU_8'
+  machineType: 'N1_STANDARD_2'
